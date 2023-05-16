@@ -7,7 +7,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
- * 公共配置大全
+ * 公共配置集合
  *
  * @author liuzz
  */
