@@ -14,6 +14,7 @@
     <description>公共组件模块</description>
     <modules>
         <module>common-core</module>
+        <module>common-mybatis</module>
     </modules>
 
 </project>

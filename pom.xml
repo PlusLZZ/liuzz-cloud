@@ -15,6 +15,7 @@
     <description>根项目,定义全局版本依赖包</description>
 
     <properties>
+        <liuzz.common.version>1.0.0</liuzz.common.version>
         <!--项目编译相关-->
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -99,6 +100,17 @@
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!--common依赖-->
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-core</artifactId>
+                <version>${liuzz.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-mybatis</artifactId>
+                <version>${liuzz.common.version}</version>
             </dependency>
             <!--mysql驱动-->
             <dependency>

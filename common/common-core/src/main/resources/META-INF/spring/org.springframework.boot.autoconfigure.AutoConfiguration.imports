@@ -1,1 +1,6 @@
 com.liuzz.cloud.common.core.config.AppConfig
+com.liuzz.cloud.common.core.config.JsonConfig
+com.liuzz.cloud.common.core.config.RestTemplateConfig
+com.liuzz.cloud.common.core.config.ThreadPoolConfig
+com.liuzz.cloud.common.core.config.WebMvcConfig
+com.liuzz.cloud.common.core.utils.SpringContextHolder
