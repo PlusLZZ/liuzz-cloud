@@ -4,4 +4,5 @@ com.liuzz.cloud.common.core.config.RestTemplateConfig
 com.liuzz.cloud.common.core.config.ThreadPoolConfig
 com.liuzz.cloud.common.core.config.WebMvcConfig
 com.liuzz.cloud.common.core.config.XxlJobConfig
+com.liuzz.cloud.common.core.config.LogConfig
 com.liuzz.cloud.common.core.utils.SpringContextHolder
