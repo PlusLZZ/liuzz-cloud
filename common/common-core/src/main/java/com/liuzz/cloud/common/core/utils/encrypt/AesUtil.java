@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
  *
  * @author lzz
  */
-public class AesUtils {
+public class AesUtil {
 
     public static final String AES = "AES";
 

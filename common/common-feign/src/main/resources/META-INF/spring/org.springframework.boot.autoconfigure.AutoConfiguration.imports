@@ -1,0 +1,2 @@
+com.liuzz.cloud.common.feign.FeignAutoConfiguration
+com.liuzz.cloud.common.feign.handler.GlobalBizExceptionHandler

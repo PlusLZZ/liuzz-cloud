@@ -4,7 +4,6 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.liuzz.cloud.common.core.constants.SystemConstant;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
@@ -20,7 +19,6 @@ import java.util.HashMap;
  */
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result extends HashMap<String, Object> implements Serializable {
@@ -60,7 +58,7 @@ public class Result extends HashMap<String, Object> implements Serializable {
         return buildResult(SystemConstant.SUCCESS, SUCCESS_TEXT, data, null);
     }
 
-    public static Result success(Object data, String message, Object[] args) {
+    public static Result success(Object data, String message, Object... args) {
         return buildResult(SystemConstant.SUCCESS, StrUtil.format(message, args), data, null);
     }
 
@@ -75,11 +73,11 @@ public class Result extends HashMap<String, Object> implements Serializable {
         return buildResult(SystemConstant.FAIL, ERROR_TEXT, null, null);
     }
 
-    public static Result error(String message, Object[] args) {
+    public static Result error(String message, Object... args) {
         return buildResult(SystemConstant.FAIL, StrUtil.format(message, args), null, null);
     }
 
-    public static Result error(Throwable cause, String message, Object[] args) {
+    public static Result error(Throwable cause, String message, Object... args) {
         return buildResult(SystemConstant.FAIL, StrUtil.format(message, args) + StrUtil.format("({})", cause.getMessage()), null, null);
     }
 
@@ -96,6 +94,11 @@ public class Result extends HashMap<String, Object> implements Serializable {
      */
     public boolean isPage() {
         return get(TOTAL) != null;
+    }
+
+    public Result setCode(String code){
+        put(CODE,code);
+        return this;
     }
 
 }

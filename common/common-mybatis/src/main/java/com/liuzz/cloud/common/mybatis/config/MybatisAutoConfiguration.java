@@ -2,6 +2,8 @@ package com.liuzz.cloud.common.mybatis.config;
 
 import com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties;
 import com.alibaba.druid.util.Utils;
+import com.baomidou.dynamic.datasource.processor.DsProcessor;
+import com.baomidou.dynamic.datasource.provider.DynamicDataSourceProvider;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -10,11 +12,20 @@ import com.liuzz.cloud.common.mybatis.core.SqlFilterArgumentResolver;
 import com.liuzz.cloud.common.mybatis.handler.MybatisPlusMetaObjectHandler;
 import com.liuzz.cloud.common.mybatis.interceptor.ExecuteTimeInterceptor;
 import com.liuzz.cloud.common.mybatis.interceptor.MyPaginationInnerInterceptor;
+import com.liuzz.cloud.common.mybatis.processor.*;
+import com.liuzz.cloud.common.mybatis.properties.DataSourceProperties;
+import com.liuzz.cloud.common.mybatis.provider.JdbcDynamicDataSourceProvider;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.expression.BeanFactoryResolver;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -28,7 +39,39 @@ import java.util.List;
  * @author liuzz
  */
 @Configuration(proxyBeanMethods = false)
+@AutoConfigureAfter(DataSourceAutoConfiguration.class)
+@EnableConfigurationProperties(DataSourceProperties.class)
+@EnableTransactionManagement
 public class MybatisAutoConfiguration implements WebMvcConfigurer {
+
+    /**
+     * 动态数据源提供器
+     */
+    @Bean
+    public DynamicDataSourceProvider dynamicDataSourceProvider(DataSourceProperties properties) {
+        return new JdbcDynamicDataSourceProvider(properties);
+    }
+
+    @Bean
+    public DsProcessor dsProcessor(BeanFactory beanFactory) {
+        LastParamDsProcessor processor = new LastParamDsProcessor();
+        DsProcessor headerProcessor = new MyDsHeaderProcessor();
+        DsProcessor sessionProcessor = new MyDsSessionProcessor();
+        MyDsSpelExpressionProcessor spelExpressionProcessor = new MyDsSpelExpressionProcessor();
+        spelExpressionProcessor.setBeanResolver(new BeanFactoryResolver(beanFactory));
+        processor.setNextProcessor(headerProcessor);
+        headerProcessor.setNextProcessor(sessionProcessor);
+        sessionProcessor.setNextProcessor(spelExpressionProcessor);
+        return processor;
+    }
+
+    /**
+     * 数据源检测拦截
+     */
+    @Bean
+    public DsCheckAspect dsCheckAspect(){
+        return new DsCheckAspect();
+    }
 
     /**
      * SQL 过滤器避免SQL 注入

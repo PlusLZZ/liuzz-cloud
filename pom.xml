@@ -112,6 +112,11 @@
                 <artifactId>common-mybatis</artifactId>
                 <version>${liuzz.common.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-feign</artifactId>
+                <version>${liuzz.common.version}</version>
+            </dependency>
             <!--mysql驱动-->
             <dependency>
                 <groupId>mysql</groupId>

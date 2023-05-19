@@ -16,7 +16,7 @@ import java.util.Set;
  * @author lzz
  */
 
-public class ValidateUtils {
+public class ValidateUtil {
 
     /**
      * 快速失败校验器,有一个失败就返回

@@ -23,7 +23,7 @@ import java.util.TimeZone;
  *
  * @author liuzz
  */
-public class JsonUtils {
+public class JsonUtil {
 
     public static final ObjectMapper JSON_MAPPER = initMapper();
 
