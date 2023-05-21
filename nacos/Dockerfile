@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM anolis-registry.cn-zhangjiakou.cr.aliyuncs.com/openanolis/openjdk:8
 VOLUME /home/package/nacos
 MAINTAINER liuzz
 RUN mkdir -p /home/package/nacos
