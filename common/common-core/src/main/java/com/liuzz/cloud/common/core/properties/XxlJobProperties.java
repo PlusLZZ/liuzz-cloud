@@ -2,12 +2,14 @@ package com.liuzz.cloud.common.core.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 /**
  * @author liuzz
  */
 @Data
 @ConfigurationProperties(prefix = "xxl.job")
+@RefreshScope
 public class XxlJobProperties {
 
     /**

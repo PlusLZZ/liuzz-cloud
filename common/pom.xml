@@ -16,6 +16,9 @@
         <module>common-core</module>
         <module>common-mybatis</module>
         <module>common-feign</module>
+        <module>common-mongo</module>
+        <module>common-redis</module>
+        <module>common-security</module>
     </modules>
 
 </project>

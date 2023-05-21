@@ -10,6 +10,7 @@
     <name>${project.artifactId}</name>
     <modules>
         <module>common</module>
+        <module>nacos</module>
     </modules>
     <packaging>pom</packaging>
     <description>根项目,定义全局版本依赖包</description>
@@ -115,6 +116,21 @@
             <dependency>
                 <groupId>com.liuzz</groupId>
                 <artifactId>common-feign</artifactId>
+                <version>${liuzz.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-redis</artifactId>
+                <version>${liuzz.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-security</artifactId>
+                <version>${liuzz.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-mongo</artifactId>
                 <version>${liuzz.common.version}</version>
             </dependency>
             <!--mysql驱动-->

@@ -1,0 +1,3 @@
+com.liuzz.cloud.common.mongo.MongoDbAutoConfiguration
+com.liuzz.cloud.common.mongo.utils.MongoUtils
+com.liuzz.cloud.common.mongo.config.MongoTypeConfig
