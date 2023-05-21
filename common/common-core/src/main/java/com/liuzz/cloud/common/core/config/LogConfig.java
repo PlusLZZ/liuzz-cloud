@@ -7,13 +7,15 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
 
+import static org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication.Type.SERVLET;
+
 /**
  * 日志配置
  *
  * @author liuzz
  */
 @RequiredArgsConstructor
-@ConditionalOnWebApplication
+@ConditionalOnWebApplication(type = SERVLET)
 @AutoConfiguration
 public class LogConfig {
 

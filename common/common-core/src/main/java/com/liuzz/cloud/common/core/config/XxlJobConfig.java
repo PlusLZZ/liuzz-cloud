@@ -4,6 +4,7 @@ import com.liuzz.cloud.common.core.constants.ServiceNameConstant;
 import com.liuzz.cloud.common.core.properties.XxlJobProperties;
 import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.context.annotation.Bean;
@@ -12,12 +13,15 @@ import org.springframework.util.StringUtils;
 
 import java.util.stream.Collectors;
 
+import static org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication.Type.SERVLET;
+
 /**
  * xxl-job配置
  * @author liuzz
  */
 @AutoConfiguration
 @EnableConfigurationProperties(XxlJobProperties.class)
+@ConditionalOnWebApplication(type = SERVLET)
 public class XxlJobConfig {
 
     /**

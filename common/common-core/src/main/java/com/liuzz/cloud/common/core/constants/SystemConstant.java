@@ -31,4 +31,9 @@ public class SystemConstant {
      */
     public static final String FAIL = "500";
 
+    /**
+     * 网关层设置的请求开始时间
+     */
+    public static final String REQUEST_START_TIME = "requestStartTime";
+
 }

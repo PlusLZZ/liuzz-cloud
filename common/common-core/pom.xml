@@ -75,13 +75,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-context</artifactId>
-            <optional>true</optional>
         </dependency>
         <!-- LB 扩展 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-            <optional>true</optional>
         </dependency>
         <!--okhttp-->
         <dependency>
@@ -93,6 +91,7 @@
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>
             <version>${xxl-job.version}</version>
+            <optional>true</optional>
         </dependency>
         <!--提供服务发现能力-->
         <dependency>
@@ -113,6 +112,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-webmvc-core</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
