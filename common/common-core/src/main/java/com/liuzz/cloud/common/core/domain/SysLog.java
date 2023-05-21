@@ -66,6 +66,10 @@ public class SysLog{
     @Schema(description = "异常信息")
     private String errorMsg;
 
+    @TableField(value = "remark")
+    @Schema(description = "日志备注")
+    private String remark;
+
     @Schema(description = "操作人")
     @TableField(value = "create_by", fill = FieldFill.INSERT)
     private String createBy;

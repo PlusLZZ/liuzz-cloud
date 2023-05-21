@@ -6,6 +6,9 @@ package com.liuzz.cloud.common.core.constants;
  */
 public class LogConstant {
 
-
+    /**
+     * 登录
+     */
+    public static final String LOGIN = "login";
 
 }
