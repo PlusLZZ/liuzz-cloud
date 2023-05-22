@@ -12,6 +12,7 @@
         <module>common</module>
         <module>nacos</module>
         <module>gateway</module>
+        <module>auth</module>
     </modules>
     <packaging>pom</packaging>
     <description>根项目,定义全局版本依赖包</description>
