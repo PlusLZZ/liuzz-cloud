@@ -1,6 +1,6 @@
-package com.liuzz.cloud.common.core.config;
+package com.liuzz.cloud.common.swagger;
 
-import com.liuzz.cloud.common.core.properties.SwaggerProperties;
+import com.liuzz.cloud.common.swagger.properties.SwaggerProperties;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.OAuthFlow;
@@ -29,7 +29,7 @@ import java.util.List;
 @ConditionalOnProperty(name = "swagger.enabled", matchIfMissing = true)
 @ConditionalOnMissingClass("org.springframework.cloud.gateway.config.GatewayAutoConfiguration")
 @AutoConfiguration
-public class SwaggerConfig {
+public class SwaggerAutoConfiguration {
 
     private final SwaggerProperties swaggerProperties;
 

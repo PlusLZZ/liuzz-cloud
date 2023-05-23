@@ -1,6 +1,6 @@
-package com.liuzz.cloud.common.core.event;
+package com.liuzz.cloud.common.log.event;
 
-import com.liuzz.cloud.common.core.domain.SysLog;
+import com.liuzz.cloud.common.log.domain.SysLog;
 import org.springframework.context.ApplicationEvent;
 
 /**

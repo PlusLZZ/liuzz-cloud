@@ -1,4 +1,4 @@
-package com.liuzz.cloud.common.core.constants;
+package com.liuzz.cloud.common.log.constants;
 
 /**
  * 日志标题常量,对接字典

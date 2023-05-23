@@ -1,4 +1,4 @@
-package com.liuzz.cloud.common.core.annotation;
+package com.liuzz.cloud.common.log.annotation;
 
 
 import java.lang.annotation.*;

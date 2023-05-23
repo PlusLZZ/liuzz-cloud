@@ -135,6 +135,21 @@
                 <artifactId>common-mongo</artifactId>
                 <version>${liuzz.common.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-job</artifactId>
+                <version>${liuzz.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-log</artifactId>
+                <version>${liuzz.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liuzz</groupId>
+                <artifactId>common-swagger</artifactId>
+                <version>${liuzz.common.version}</version>
+            </dependency>
             <!--mysql驱动-->
             <dependency>
                 <groupId>mysql</groupId>

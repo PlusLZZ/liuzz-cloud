@@ -1,4 +1,4 @@
-package com.liuzz.cloud.common.core.init;
+package com.liuzz.cloud.common.log.init;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;

@@ -47,7 +47,6 @@
         <dependency>
             <groupId>com.liuzz</groupId>
             <artifactId>common-core</artifactId>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 

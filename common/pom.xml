@@ -20,6 +20,8 @@
         <module>common-redis</module>
         <module>common-security</module>
         <module>common-job</module>
+        <module>common-log</module>
+        <module>common-swagger</module>
     </modules>
 
 </project>

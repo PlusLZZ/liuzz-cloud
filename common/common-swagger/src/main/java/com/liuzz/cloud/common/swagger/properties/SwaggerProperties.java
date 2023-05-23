@@ -1,4 +1,4 @@
-package com.liuzz.cloud.common.core.properties;
+package com.liuzz.cloud.common.swagger.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,4 +1,4 @@
-package com.liuzz.cloud.common.core.domain;
+package com.liuzz.cloud.common.log.domain;
 
 import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @TableName(value = "sys_log", autoResultMap = true)
 @Schema(description = "日志对象")
-public class SysLog{
+public class SysLog {
 
     private static final long serialVersionUID = 1L;
 
