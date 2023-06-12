@@ -1,5 +1,6 @@
-package com.liuzz.cloud.common.core.properties;
+package com.liuzz.cloud.core.config.properties;
 
+import com.liuzz.cloud.core.config.annotations.PropertyKey;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -9,8 +10,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  *
  * @author liuzz
  */
-@ConfigurationProperties(prefix = "system")
+@ConfigurationProperties(prefix = "system", ignoreInvalidFields = false)
 @Data
 @RefreshScope
-public class SystemProperties {
+@PropertyKey("system")
+public class SystemProperty {
 }
